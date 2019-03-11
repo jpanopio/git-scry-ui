@@ -48,6 +48,7 @@ class Organizations extends Component {
 
               return (
                 <OrganizationCard
+                  key={id}
                   id={id}
                   login={login}
                   avatarUrl={avatarUrl}
