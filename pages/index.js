@@ -5,9 +5,22 @@ import {
   Row,
   Col,
 } from 'react-grid-system';
+import styled from 'styled-components';
+import { COLOR_MAIN_BACKGROUND } from '../constants/colors';
+import Header from '../components/Header';
 
 const Index = () => (
   <ScreenClassProvider>
+    <Header />
+    <style jsx global>
+      {`
+        body {
+          margin: 0;
+          background-color: ${COLOR_MAIN_BACKGROUND};
+          font-family: helvetica;
+        }
+      `}
+    </style>
     <Container>
       <Row>
         <Col>
