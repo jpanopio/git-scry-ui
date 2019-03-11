@@ -8,30 +8,24 @@ import {
 import styled from 'styled-components';
 import { COLOR_MAIN_BACKGROUND } from '../constants/colors';
 import Header from '../components/Header';
+import App from '../components/App';
+import Card from '../components/Card';
 
 const Index = () => (
-  <ScreenClassProvider>
-    <Header />
-    <style jsx global>
-      {`
-        body {
-          margin: 0;
-          background-color: ${COLOR_MAIN_BACKGROUND};
-          font-family: helvetica;
-        }
-      `}
-    </style>
+  <App>
     <Container>
-      <Row>
-        <Col>
-          <p>Hello next.js</p>
-        </Col>
-        <Col>
-          <p>YEET.js</p>
-        </Col>
-      </Row>
+      <Card>
+        <Row>
+          <Col>
+            <p>Hello next.js</p>
+          </Col>
+          <Col>
+            <p>YEET.js</p>
+          </Col>
+        </Row>
+      </Card>
     </Container>
-  </ScreenClassProvider>
+  </App>
 );
 
 export default Index;
