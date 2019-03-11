@@ -9,11 +9,12 @@ import styled from 'styled-components';
 import { COLOR_MAIN_BACKGROUND } from '../constants/colors';
 import Header from '../components/Header';
 import App from '../components/App';
+import Card from '../components/Card';
 
 const Index = () => (
-  <ScreenClassProvider>
-    <App>
-      <Container>
+  <App>
+    <Container>
+      <Card>
         <Row>
           <Col>
             <p>Hello next.js</p>
@@ -22,9 +23,9 @@ const Index = () => (
             <p>YEET.js</p>
           </Col>
         </Row>
-      </Container>
-    </App>
-  </ScreenClassProvider>
+      </Card>
+    </Container>
+  </App>
 );
 
 export default Index;
