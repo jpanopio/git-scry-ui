@@ -6,19 +6,21 @@ import {
   Col,
 } from 'react-grid-system';
 import fetch from 'isomorphic-unfetch';
+import { GIT_SCRY_CHECK_LOGGED_IN } from '../constants/endpoints';
 import App from '../components/App';
 import Card from '../components/Card';
 
 class Index extends Component {
   static async getInitialProps({ req = {} }) {
-    const response = await fetch('https://google.com');
+    const response = await fetch(GIT_SCRY_CHECK_LOGGED_IN);
+    const { loggedIn } = await response.json();
 
-    console.log('result', response);
-
-    return {};
+    return { loggedIn };
   }
 
   render() {
+    const { loggedIn } = this.props;
+
     return (
       <App>
         <Container>
