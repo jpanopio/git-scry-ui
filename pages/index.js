@@ -11,7 +11,7 @@ import App from '../components/App';
 import Card from '../components/Card';
 
 class Index extends Component {
-  static async getInitialProps({ req = {} }) {
+  static async getInitialProps() {
     const response = await fetch(GIT_SCRY_CHECK_LOGGED_IN);
     const { loggedIn } = await response.json();
 
