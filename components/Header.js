@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { COLOR_PRIMARY, COLOR_FONT_PRIMARY } from '../constants/colors';
+import Logo from './Logo';
 
 const StyledHeader = styled.header`
   padding: 1rem 0;
@@ -18,7 +19,7 @@ const Header = () => (
     <Container>
       <Row>
         <Col>
-          <StyledTitle>Git Scry</StyledTitle>
+          <Logo />
         </Col>
       </Row>
     </Container>
