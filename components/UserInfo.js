@@ -5,8 +5,8 @@ import Card from './Card';
 import { COLOR_PRIMARY, COLOR_FONT_PRIMARY,COLOR_CARD_BORDER } from '../constants/colors';
 
 const StyledImage = styled.img`
-  width: 4.25rem;
-  height: 4.25rem;
+  width: 4.5rem;
+  height: 4.5rem;
 `;
 
 const StyleFont = styled.h1`
@@ -28,6 +28,15 @@ const StyledUser = styled.h1`
   color: ${COLOR_PRIMARY};
 `;
 
+const StyledLink = styled.a`
+  color: ${COLOR_PRIMARY};
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const UserInfo = ({
   id,
   login,
@@ -40,7 +49,9 @@ const UserInfo = ({
     <Container>
       <Row>
         <Col>
-          <StyledImage src={avatarUrl}/>
+          <StyledLink href={`https://github.com/${login}`}>
+            <StyledImage src={avatarUrl}/>
+          </StyledLink>
         </Col>
         <Col>
           <StyledUser
@@ -50,10 +61,14 @@ const UserInfo = ({
           >User Info</StyledUser>
         </Col>
       </Row>
-        <StyleFont>Name: <StyledTitle>{login}</StyledTitle></StyleFont>
-        <StyleFont>Company: <StyledTitle>{company}</StyledTitle></StyleFont>
-        <StyleFont>Location: <StyledTitle>{location}</StyledTitle></StyleFont>
-        <StyleFont>Bio: <StyledTitle>{bio}</StyledTitle></StyleFont>
+        <StyleFont>Name: </StyleFont>
+        <StyledTitle>{login}</StyledTitle>
+        <StyleFont>Company: </StyleFont>
+        <StyledTitle>{company}</StyledTitle>
+        <StyleFont>Location: </StyleFont>
+        <StyledTitle>{location}</StyledTitle>
+        <StyleFont>Bio: </StyleFont>
+        <StyledTitle>{bio}</StyledTitle>
     </Container>
   </Card>
 );

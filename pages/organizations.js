@@ -66,7 +66,7 @@ class Organizations extends Component {
         <Container>
           <div
             style={{
-              margin: '-150px -5px',
+              margin: '-166px -5px',
               display: 'flex',
               flexWrap: 'wrap',
               justifyContent: 'flex-start',
