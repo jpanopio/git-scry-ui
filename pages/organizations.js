@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
+import fetch from 'isomorphic-unfetch';
+import { GIT_SCRY_GET_ORGANIZATIONS } from '../constants/endpoints';
 import App from '../components/App';
 import OrganizationCard from '../components/OrganizationCard';
 
 class Organizations extends Component {
-  static async getInitialProps() {
-    const organizations = [
+  static async getInitialProps(ctx) {
+    const response = await fetch(
+      GIT_SCRY_GET_ORGANIZATIONS,
       {
-        "id": 2824164,
-        "login": "hackreactor",
-        "avatar_url": "https://avatars3.githubusercontent.com/u/2824164?v=4",
-        "description": ""
+        headers: {
+          cookie: ctx.req.headers.cookie,
+        },
       },
-      {
-        "id": 4503814,
-        "login": "narvar",
-        "avatar_url": "https://avatars0.githubusercontent.com/u/4503814?v=4",
-        "description": ""
-      }
-    ];
+    );
+
+    const organizations = await response.json();
 
     return { organizations };
   }
