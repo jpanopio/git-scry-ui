@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import {
   COLOR_CARD_BACKGROUND,
   COLOR_CARD_BORDER,
@@ -15,6 +16,7 @@ import {
 } from 'react-grid-system';
 
 
+
 import styled from 'styled-components';
 import Header from '../components/Header';
 import App from '../components/App';
@@ -26,6 +28,7 @@ const StyledTitle = styled.h1`
 `;
 
 import fetch from 'isomorphic-unfetch';
+
 import {
   GIT_SCRY_CHECK_LOGGED_IN,
   GIT_SCRY_LOGIN_URL,
@@ -67,7 +70,7 @@ class Index extends Component {
                 <StyledTitle>How to Use?</StyledTitle>
                 <p>Click the button below, log in to github and select the repo and PRs you want to
                 include in your self-reflection. It's that easy!</p>
-                <a href="https://github.com/login">
+                <a href={GIT_SCRY_LOGIN_URL}>
                   <button style={{ fontSize: 20, color: COLOR_FONT_PRIMARY}}>Go to Github Page</button>
                 </a>
                 <style global jsx>{`
@@ -88,6 +91,5 @@ class Index extends Component {
     );
   }
 }
-
 
 export default Index;
