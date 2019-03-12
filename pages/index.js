@@ -84,6 +84,17 @@ class Index extends Component {
                   }
                 `}</style>
               </Col>
+              <Col>
+              <img src="/static/images/logoCrystalBall.png" alt="my image" width="100" height="100"/>
+              <style global jsx>{`
+                img {
+                  height:270px;
+                  width: 270px;
+                  background: white;
+                  margin: 30px 50px 100px 50px;
+                }
+              `}</style>
+              </Col>
             </Row>
           </Card>
         </Container>
