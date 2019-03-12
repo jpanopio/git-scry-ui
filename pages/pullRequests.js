@@ -41,17 +41,33 @@ class PullRequests extends Component {
   exportPullRequests = async () => {
     const { pullRequests } = this.props;
 
-    await fetch(
+    const response = await fetch(
       GIT_SCRY_EXPORT_PULL_REQUESTS,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Accept: 'application/json',
+          Accept: 'blob',
         },
         body: JSON.stringify(pullRequests),
       },
     );
+
+    const readableStream = response.body;
+    const reader = readableStream.getReader();
+    const blobbbbb = await reader.read();
+    const decoder = new TextDecoder();
+    const download = decoder.decode(blobbbbb.value);
+    const textBlob = new Blob([download], { type: 'text/plain' });
+
+    const link = document.createElement('a');
+    
+    link.href = window.URL.createObjectURL(textBlob);
+    link.download = 'pull-requests.txt';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
   render() {
