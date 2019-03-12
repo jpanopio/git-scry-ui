@@ -35,53 +35,52 @@ class Organizations extends Component {
 
     return (
       <App>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'center',
-          }}
-        >
-          {organizations.map(
-            (org) => {
-              const {
-                id,
-                login,
-                avatar_url: avatarUrl,
-                description,
-              } = org;
-
-              return (
-                <OrganizationCard
-                  key={id}
-                  id={id}
-                  login={login}
-                  avatarUrl={avatarUrl}
-                  description={description}
-                />
-              );
-            }
-          )}
-        </div>
         <Container>
-          <div
-            style={{
-              margin: '-166px -5px',
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'flex-start',
-            }}
-          >
-            <UserInfo
-              key={user_info.id}
-              id={user_info.id}
-              login={user_info.login}
-              avatarUrl={user_info.avatar_url}
-              company={user_info.company}
-              location={user_info.location}
-              bio={user_info.bio}
-            />
-          </div>
+          <Row>
+            <Col>
+              <div
+              >
+                <UserInfo
+                  key={user_info.id}
+                  id={user_info.id}
+                  login={user_info.login}
+                  avatarUrl={user_info.avatar_url}
+                  company={user_info.company}
+                  location={user_info.location}
+                  bio={user_info.bio}
+                />
+              </div>
+            </Col>
+            <Col>
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                }}
+              >
+                {organizations.map(
+                  (org) => {
+                    const {
+                      id,
+                      login,
+                      avatar_url: avatarUrl,
+                      description,
+                    } = org;
+
+                    return (
+                      <OrganizationCard
+                        key={id}
+                        id={id}
+                        login={login}
+                        avatarUrl={avatarUrl}
+                        description={description}
+                      />
+                    );
+                  }
+                )}
+              </div>
+            </Col>
+          </Row>
         </Container>
       </App>
     );
