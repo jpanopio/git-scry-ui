@@ -7,7 +7,6 @@ import {
   COLOR_FONT_PRIMARY,
   COLOR_MAIN_BACKGROUND
 } from '../constants/colors';
-
 import {
   ScreenClassProvider,
   Container,
@@ -42,21 +41,21 @@ const Index = () => (
             <StyledTitle>How to Use?</StyledTitle>
             <p>Click the button below, log in to github and select the repo and PRs you want to
             include in your self-reflection. It's that easy!</p>
+            <a href="https://github.com/login">
+              <button style={{ fontSize: 20, color: COLOR_FONT_PRIMARY}}>Go to Github Page</button>
+            </a>
+            <style global jsx>{`
+              button {
+                height:50px;
+                width: 200px;
+                background: white;
+                margin: 15px 2px;
+                border: 3px solid ${COLOR_CARD_BORDER};
+                background-color: ${COLOR_PRIMARY};
+              }
+            `}</style>
           </Col>
         </Row>
-        <a href="https://github.com/login">
-          <button style={{ fontSize: 20, color: COLOR_FONT_PRIMARY}}>Go to Github Page</button>
-        </a>
-        <style global jsx>{`
-          button {
-            height:50px;
-            width: 200px;
-            background: white;
-            margin: 15px 2px;
-            border: 3px solid ${COLOR_CARD_BORDER};
-            background-color: ${COLOR_PRIMARY};
-          }
-        `}</style>
       </Card>
     </Container>
   </App>
