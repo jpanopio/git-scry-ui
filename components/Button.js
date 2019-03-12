@@ -18,8 +18,9 @@ const StyledButton = styled.button`
 const Button = ({
   s = {},
   children,
+  onClick = () => {},
 }) => (
-  <StyledButton s={s}>
+  <StyledButton s={s} onClick={onClick}>
     <span>
       {children}
     </span>
