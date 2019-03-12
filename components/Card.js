@@ -8,7 +8,7 @@ const StyledDiv = styled.div`
   height: ${(props) => props.s.height || 'auto'};
   margin: ${(props) => props.s.margin || '1rem'};
   border: 1px solid ${COLOR_CARD_BORDER};
-  border-radius: 4px;
+  border-radius: 2px;
   padding: 1rem;
   background-color: ${COLOR_CARD_BACKGROUND};
 `;
