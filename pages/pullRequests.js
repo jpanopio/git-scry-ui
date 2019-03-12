@@ -10,7 +10,10 @@ import App from '../components/App';
 import Card from '../components/Card';
 import PullRequest from '../components/PullRequest';
 import Button from '../components/Button';
-import { GIT_SCRY_GET_PULL_REQUESTS } from '../constants/endpoints';
+import {
+  GIT_SCRY_GET_PULL_REQUESTS,
+  GIT_SCRY_EXPORT_PULL_REQUESTS,
+} from '../constants/endpoints';
 
 class PullRequests extends Component {
   static async getInitialProps(ctx) {
@@ -33,6 +36,22 @@ class PullRequests extends Component {
     } = result;
 
     return { totalCount, pullRequests };
+  }
+
+  exportPullRequests = async () => {
+    const { pullRequests } = this.props;
+
+    await fetch(
+      GIT_SCRY_EXPORT_PULL_REQUESTS,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(pullRequests),
+      },
+    );
   }
 
   render() {
@@ -64,7 +83,7 @@ class PullRequests extends Component {
               </Card>
             </Col>
             <Col>
-              <Button>
+              <Button onClick={this.exportPullRequests}>
                 EXPORT
               </Button>
             </Col>
