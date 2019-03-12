@@ -11,6 +11,7 @@ import Header from '../components/Header';
 import App from '../components/App';
 import Card from '../components/Card';
 import CrystalBall from '../components/CrystalBall';
+import Button from '../components/Button';
 import {
   COLOR_CARD_BACKGROUND,
   COLOR_CARD_BORDER,
@@ -50,7 +51,7 @@ class Index extends Component {
     return (
       <App>
         <Container>
-          <Card s={{ margin: '3rem 1rem' }}>
+          <Card>
             <Row>
               <Col>
                 <StyledTitle>Why Git Scry?</StyledTitle>
@@ -65,18 +66,9 @@ class Index extends Component {
                 <p>Click the button below, log in to github and select the repo and PRs you want to
                 include in your self-reflection. It's that easy!</p>
                 <a href={GIT_SCRY_LOGIN_URL}>
-                  <button
-                    style={{
-                      width: '100%',
-                      fontSize: 20,
-                      color: COLOR_FONT_PRIMARY,
-                      height: '50px',
-                      margin: '15px 0',
-                      backgroundColor: COLOR_PRIMARY,
-                    }}
-                  >
+                  <Button>
                     Log in with GitHub
-                  </button>
+                  </Button>
                 </a>
               </Col>
               <Col>
