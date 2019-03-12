@@ -18,7 +18,7 @@ const Header = () => (
     <Container>
       <Row>
         <Col>
-          <StyledTitle>Git Scry</StyledTitle>
+          <img src="/static/images/logoTypographicWhite.png" />
         </Col>
       </Row>
     </Container>
