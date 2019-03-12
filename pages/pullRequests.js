@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import fetch from 'isomorphic-unfetch';
 import querystring from 'querystring';
+import {
+  Container,
+  Row,
+  Col,
+} from 'react-grid-system';
 import App from '../components/App';
 import Card from '../components/Card';
 import PullRequest from '../components/PullRequest';
+import Button from '../components/Button';
 import { GIT_SCRY_GET_PULL_REQUESTS } from '../constants/endpoints';
 
 class PullRequests extends Component {
@@ -34,23 +40,36 @@ class PullRequests extends Component {
 
     return (
       <App>
-        <Card>
-          {pullRequests.map(
-            (pullRequest) => {
-              const {
-                title,
-                body,
-              } = pullRequest;
+        <Container>
+          <Row>
+            <Col md={10}>
+              <Card>
+                {pullRequests.map(
+                  (pullRequest) => {
+                    const {
+                      id,
+                      title,
+                      body,
+                    } = pullRequest;
 
-              return (
-                <PullRequest
-                  title={title}
-                  body={body}
-                />
-              );
-            }
-          )}
-        </Card>
+                    return (
+                      <PullRequest
+                        key={id}
+                        title={title}
+                        body={body}
+                      />
+                    );
+                  }
+                )}
+              </Card>
+            </Col>
+            <Col>
+              <Button>
+                EXPORT
+              </Button>
+            </Col>
+          </Row>
+        </Container>
       </App>
     );
   }

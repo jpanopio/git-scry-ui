@@ -5,6 +5,7 @@ import { COLOR_PRIMARY, COLOR_FONT_PRIMARY } from '../constants/colors';
 import Logo from './Logo';
 
 const StyledHeader = styled.header`
+  margin-bottom: 2rem;
   padding: 1rem 0;
   background-color: ${COLOR_PRIMARY};
 `;

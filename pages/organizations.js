@@ -29,7 +29,6 @@ class Organizations extends Component {
       <App>
         <div
           style={{
-            paddingTop: '4rem',
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'center',

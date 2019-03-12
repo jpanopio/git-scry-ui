@@ -12,6 +12,7 @@ const StyledButton = styled.button`
   font-size: 20px;
   color: ${COLOR_FONT_PRIMARY};
   background-color: ${COLOR_PRIMARY};
+  cursor: pointer;
 `;
 
 const Button = ({

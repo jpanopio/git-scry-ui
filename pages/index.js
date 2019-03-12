@@ -51,7 +51,7 @@ class Index extends Component {
     return (
       <App>
         <Container>
-          <Card s={{ margin: '3rem 1rem' }}>
+          <Card>
             <Row>
               <Col>
                 <StyledTitle>Why Git Scry?</StyledTitle>
